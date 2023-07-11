@@ -1,0 +1,14 @@
+<h2>All Posts:</h2>
+<% @posts.each do |post|%>
+  <blockquote>
+    <p>
+      <a href="/post/<%= post.id%>"><strong><%= post.title%> </strong></a>
+    </p>
+    <p>
+      <%= post.content%>
+    </p>
+    <footer>Created by: <cite title="Source Title"><%= post.author%> |
+        Updated at: <%= post.updated_at.localtime.strftime("%Y-%m-%d %H:%M") %>
+      </cite></footer>
+  </blockquote>
+<% end %>
